@@ -146,7 +146,9 @@ You'll use two hidden service menus. You open them by **pressing and holding two
 | **Green Engineering Menu (GEM)** | Running the M.I.B. tool | **Only after M.I.B. is installed** (Step 4) |
 | **Reboot** | Restarting the MMI (hold the red-marked controls ~10 s) | Always |
 
-Press the buttons highlighted in **red**, in the direction of the arrows. The picture above is for the TT (and R8/A3). Other Audi models use different combinations:
+Press the buttons highlighted in **red**, in the direction of the arrows. The picture above is for the TT (and R8/A3). For the **Red Engineering Menu** on the TT, that means pressing **NAV/MAP up** and **RADIO down** at the same time and holding them.
+
+Other Audi models use different combinations:
 
 <details>
 <summary>Key combinations for all Audi models (click to open)</summary>
@@ -255,12 +257,38 @@ In the TT, CarPlay and Android Auto are shown on the **Virtual Cockpit**. The Vi
 
 **Time:** about 15–30 minutes. **SD card:** #1 again (re-formatted).
 
-1. On [mibvault.com](https://mibvault.com), search for **`0296`**, **`Virtual Cockpit`** or **`8S0906961`** (the part number family of the TT 8S Virtual Cockpit).
-2. Download the Virtual Cockpit update for **your** car (region, and pre-facelift / facelift if listed).
-3. **Format** SD card #1 again and unpack the update onto it the same way as in [2.2](#22-put-the-firmware-on-sd-card-1). Again, **`metainfo2.txt` must be directly on the card**.
-4. In the car: insert into **SD1** → **Red Engineering Menu** → **Update** → **SD card** → start.
-5. Wait until it is finished. The instrument cluster may go dark and restart. **Do not switch the car off.**
-6. Check in the Red Engineering Menu that the Virtual Cockpit now shows **0296** (or higher).
+#### How does this work?
+
+The Virtual Cockpit has no SD slot of its own. **The MMI updates it for you**: you put the Virtual Cockpit update on an SD card, insert it in the MMI (glovebox), and the MMI passes it on to the cockpit. Audi dealers do it exactly the same way: Audi publishes the TT update as an official SD card, part number **`8S0 906 961 AE`**, software version **`0296`**. The only difference is that the dealer starts it from their diagnostic computer, while you start it from the Red Engineering Menu.
+
+> [!TIP]
+> **Don't want to do this step yourself?** Any Audi dealer can install Virtual Cockpit version 0296 (ask for the instrument cluster software update, SD card `8S0 906 961 AE`). It's an official Audi update, so it doesn't affect anything else in this guide. Dealers usually charge for it.
+
+#### 3a. Find the right file
+
+1. On [mibvault.com](https://mibvault.com), search for **`0296`**, **`8S0906961AE`** or **`Virtual Cockpit`**.
+2. The correct file for the TT contains **`0296`** and usually **`8S0906961AE`** and/or **`AU334`** in its name. The internal release name of this update is **`C1_AU334_0296_0790_prod`**.
+3. It's meant for the **Audi TT / TTS / TT RS 8S** Virtual Cockpit.
+
+> [!CAUTION]
+> **Never downgrade the Virtual Cockpit.** Only install 0296 if your current version is **lower** than 0296. Installing an older version on the cluster can permanently damage it (people have reported damaged cluster memory after a downgrade). If you already have 0296 or higher: skip this step.
+
+#### 3b. Prepare the SD card
+
+1. **Format** SD card #1 as FAT32 ([3.2](#32-formatting-an-sd-card)). Yes, this erases the MMI firmware from it; you don't need that anymore.
+2. Unpack the Virtual Cockpit update with **7-Zip** and copy the **contents** to the card. Just like the firmware, **`metainfo2.txt` must be directly on the card**, not inside a folder ([see 2.2](#22-put-the-firmware-on-sd-card-1)).
+
+#### 3c. Install it in the car
+
+1. Battery taken care of ([3.1](#31-keep-the-battery-healthy)). **Keep the key inside the car**, near the steering column: the update won't start without it.
+2. Insert the SD card into slot **SD1**.
+3. Open the **Red Engineering Menu** (NAV/MAP up + RADIO down, see [3.4](#34-the-hidden-menus-red-and-green-engineering-menu)).
+4. **Update** → select the **SD card** → the MMI shows the Virtual Cockpit / instrument cluster package → **Start**.
+5. Wait until it's finished. **The Virtual Cockpit will go dark and restart, possibly a few times.** This is normal. Don't switch the car off and don't remove the SD card.
+6. When the summary shows everything as successful, leave the menu with BACK and remove the card.
+7. Open the Red Engineering Menu → **Version information** again and check that the Virtual Cockpit now shows **0296**.
+
+**The MMI says "no update found" or refuses the package?** Check that `metainfo2.txt` is directly on the card and try another SD card. If it still refuses, do [Step 4](#step-4-install-mib-and-activate-carplay--android-auto) first and then try this step again; some sellers say the update only installs after the M.I.B. patch.
 
 ---
 
