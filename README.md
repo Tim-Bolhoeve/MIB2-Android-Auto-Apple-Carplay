@@ -219,6 +219,7 @@ Then use [Which firmware file do I need?](#which-firmware-file-do-i-need) to pic
    - A green **"Flashed OK on MIB2 High"** label means other people have installed this file successfully.
    - Too many results? Use the **Head unit**, **Brand** and **Region** filters at the top.
 4. Click **Download** on the right. The file is large (about **2 GB**, in **.7z** format), so it can take a while.
+5. *Optional but recommended:* check that the download isn't damaged. The **fingerprint icon** next to the file shows its SHA-256 checksum. In Windows PowerShell, run `Get-FileHash "C:\path\to\the-file.7z"` and check that the long code matches.
 
 > [!CAUTION]
 > Check the first part of the name **three times**: `MHI2` + region (`ER`/`US`/`JP`...) + `AU43x` must match your car exactly.
@@ -266,9 +267,23 @@ The Virtual Cockpit has no SD slot of its own. **The MMI updates it for you**: y
 
 #### 3a. Find the right file
 
-1. On [mibvault.com](https://mibvault.com), search for **`0296`**, **`8S0906961AE`** or **`Virtual Cockpit`**.
-2. The correct file for the TT contains **`0296`** and usually **`8S0906961AE`** and/or **`AU334`** in its name. The internal release name of this update is **`C1_AU334_0296_0790_prod`**.
-3. It's meant for the **Audi TT / TTS / TT RS 8S** Virtual Cockpit.
+1. On [mibvault.com](https://mibvault.com), search for **`AU334`**: [mibvault.com/search?q=AU334](https://mibvault.com/search?q=AU334). `AU334` is the code for the **TT Virtual Cockpit**. The files are in mibvault's **"VC-AID Updates"** folder.
+2. Download this file:
+
+   **`AU_C1_AU334_0296_0790_prod_8S0906961AE_TT 2017.7z`** (37.4 MB)
+
+   The Virtual Cockpit files for the TT on mibvault (November 2026):
+
+   | File | VC version | Use it? |
+   |---|---|---|
+   | `AU_C1_AU334_0296_0790_prod_8S0906961AE_TT 2017.7z` | **0296** | ✅ **This one** |
+   | `AU_C1_AU334_0295_0783_prod TT 8S0906961AD.7z` | 0295 | ❌ older |
+   | `AU_C1_AU334_0224_0440_prod TT 8S0906961R.7z` | 0224 | ❌ older, **never install** |
+   | `AU_C1_AU334_0218_0421_prod_8S0906961E.7z` | 0218 | ❌ older, **never install** |
+
+   **How to read the name:** `AU334` = TT Virtual Cockpit, `0296` = the VC version, `8S0906961AE` = Audi's part number for this update.
+3. **Don't** take files with another code (`AU37X` = A3, `AU491` = A4/A5/Q5, `AU57X` = A6/A7, `AU724` = R8, `AU736` = Q7) or a **"GEN2"** file. They are for other cars.
+4. *Optional but recommended:* mibvault shows a **fingerprint icon** next to each file: that's its **SHA-256 checksum**. If you want to be sure the download isn't damaged, compare it: in Windows PowerShell, run `Get-FileHash "C:\path\to\the-file.7z"` and check that the long code matches.
 
 > [!CAUTION]
 > **Never downgrade the Virtual Cockpit.** Only install 0296 if your current version is **lower** than 0296. Installing an older version on the cluster can permanently damage it (people have reported damaged cluster memory after a downgrade). If you already have 0296 or higher: skip this step.
