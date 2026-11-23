@@ -188,8 +188,15 @@ You can also see the MMI version without the hidden menu under **MENU → Settin
    | Japan | `MHI2_JP_AU43x` |
 
    Example: [mibvault.com/search?q=1339](https://mibvault.com/search?q=1339)
-3. Open the result whose name **starts exactly the same as your car's firmware** (for example both start with `MHI2_ER_AU43x_`).
-4. Download it. It's usually a large **.zip / .rar / .7z** file (several GB). This can take a while.
+
+   ![mibvault search result for 1339](images/mibvault-search-1339.png)
+
+3. Check the result before you download it:
+   - The **name** starts exactly the same as your car's firmware. For a European TT that's **`MHI2_ER_AU43x_P5098_MU1339 (TT).7z`**.
+   - The labels say **MIB2 High**, **Brand: Audi**, and the right **Region** (for example *Europe/ROW*).
+   - A green **"Flashed OK on MIB2 High"** label means other people have installed this file successfully.
+   - Too many results? Use the **Head unit**, **Brand** and **Region** filters at the top.
+4. Click **Download** on the right. The file is large (about **2 GB**, in **.7z** format), so it can take a while.
 
 > [!CAUTION]
 > Check the first part of the name **three times**: `MHI2` + region (`ER`/`US`/`JP`...) + `AU43x` must match your car exactly.
