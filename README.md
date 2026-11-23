@@ -41,21 +41,39 @@ Answer these three questions:
 - If it starts with something else (for example `MHI2Q_`, `MST2_`, `MHS2_`), **stop**. Your car has a different system and this guide does not apply.
 - Already have CarPlay? Look in the MMI menu for **"Audi smartphone interface"**. If it is already there, you are done.
 
-### Which firmware is right for my region?
+### Which firmware file do I need?
 
-The firmware must match your car's **region**. Use this table to know what to look for (versions known to work with M.I.B.):
+**There is no conversion table to look up.** Your car tells you directly: the MMI shows its own firmware name (see [Step 1](#step-1-check-your-versions)), and the files on mibvault are named the same way. You only need to match them.
 
-| Your car is from | Your firmware starts with | Known target versions (pick the newest you can find) |
-|---|---|---|
-| Europe / UK / rest of world | `MHI2_ER_AU43x_` | `P5098_MU1339` (minimum for CarPlay), `P5151_MU1339`, `P5404_MU1479`, `P5406_MU1489` |
-| USA / Canada | `MHI2_US_AU43x_` | `P5124_MU1389` (minimum for CarPlay), `K1083_MU1412`, `P5180_MU1462` |
-| Japan | `MHI2_JP_AU43x_` | `P0902_MU0902` |
-| China / Korea / other | `MHI2_CN_...` / `MHI2_KR_...` | Check the [M.I.B. compatibility table](https://github.com/Mr-MIBonk/M.I.B._More-Incredible-Bash/wiki/MHI2-M.I.B.-patch-FW-compatibility-table) |
+The **Virtual Cockpit version** (for example `0280` or `0296`) has **nothing to do with** which MMI file you need. They are two separate devices with separate updates. You need **both**:
+- the MMI on the right firmware (this section), **and**
+- the Virtual Cockpit on **0296 or higher** ([Step 3](#step-3-update-the-virtual-cockpit-only-if-below-0296)).
 
-Source: the [M.I.B. firmware compatibility table](https://github.com/Mr-MIBonk/M.I.B._More-Incredible-Bash/wiki/MHI2-M.I.B.-patch-FW-compatibility-table).
+**Recipe:**
+
+1. Read your firmware name in the car, for example `MHI2_ER_AU43x_P4204_MU1169`.
+2. Keep only the **first three parts**: `MHI2_ER_AU43x`. This is your "family".
+3. In the table below, find the row with that family and download the **recommended file**.
+
+**Audi TT files on mibvault** (as listed in November 2026):
+
+| Your car shows | Region | Recommended file on mibvault | Size | Other TT files for this family (older) |
+|---|---|---|---|---|
+| `MHI2_ER_AU43x_...` | Europe / UK / rest of world | **`MHI2_ER_AU43x_P5098_MU1339 (TT).7z`** ✅ *Flashed OK ×3* | 2.0 GB | `MHI2_ER_AU43x_P4204_MU1169.7z`, `MHI2_ER_AU43x_K1074_1_MU0884 (TT).7z` |
+| `MHI2_US_AU43x_...` | USA / Canada | **`MHI2_US_AU43x_P5180_MU1462_4M0906961EK.7z`** (newest)<br>or `MHI2_US_AU43x_P5124_MU1389 (TT).7z` (minimum for CarPlay) | 777 MB / 773 MB | `MHI2_US_AU43x_K1083_MU1412_4M0906961CJ.7z`, `MHI2_US_AU43x_K1075_MU0885 (TT).7z` |
+| `MHI2_JP_AU43x_...` | Japan | Not seen on mibvault yet. Target `P0902_MU0902` (see the [M.I.B. table](https://github.com/Mr-MIBonk/M.I.B._More-Incredible-Bash/wiki/MHI2-M.I.B.-patch-FW-compatibility-table)) | – | – |
+| `MHI2_ER_AUG24_...` | Europe, **early TTs** (around 2014–2015) | See the note below ⚠️ | – | `MHI2_ER_AUG24_K1068_MU0364 (TT).7z` |
+| Anything else | – | **Stop**: ask for help first (see [Troubleshooting](#troubleshooting)) | – | – |
+
+Notes:
+- **"MU" = the version number.** Higher means newer. You can only go **up** to a file with a higher MU than you have now; don't install an older one.
+- **The extra code at the end** of some names (for example `4M0906961EK`) is Audi's **software part number** for that firmware. You don't need to match it. It's just extra information from whoever uploaded the file.
+- **Early TTs showing `AUG24`:** mibvault marks `AUG24` firmware as TT, but `AUG24` is very old (MU0364), and I couldn't confirm whether these cars can go straight to `AU43x`. Ask in the [TT Forum firmware FAQ](https://www.ttforum.co.uk/threads/faq-audi-tt-mk3-8s-firmware-updates.1970533/) before flashing.
+- Newer European versions also exist (`P5151_MU1339`, `P5404_MU1479`, `P5406_MU1489`, per the [M.I.B. table](https://github.com/Mr-MIBonk/M.I.B._More-Incredible-Bash/wiki/MHI2-M.I.B.-patch-FW-compatibility-table)), but **P5098 / MU1339 is the proven one** for CarPlay on the TT.
+- **Built-in safety net:** the MMI checks the update before installing. If you put a wrong file on the card, it will usually say the update is not valid or not compatible. Treat that as a "stop", and **don't** rely on it instead of checking the name yourself.
 
 > [!CAUTION]
-> **Never install firmware from another region or another car family.** An `ER` car gets `ER` firmware, a `US` car gets `US` firmware. `AUG22`, `AU57x` and others are for other Audi models, even if the name looks similar.
+> **Never install firmware from another region or another car.** An `ER` car gets `ER` firmware, a `US` car gets `US` firmware. Files for `AUG22` (A4/A5/Q5/Q7), `AU37x` (A3), `AU57x` (A6/A7), `AU62x` (R8), `MHI2Q_...` and other brands (`VWG`, `SKG`, `SEG`, `POG`) are **not** for the TT, even if they look similar.
 
 ---
 
@@ -150,10 +168,12 @@ You need **two version numbers** before downloading anything.
 2. Go to the **home screen** and open the **Red Engineering Menu** (see [3.4](#34-the-hidden-menus-red-and-green-engineering-menu)).
 3. Open the **version information** screen.
 4. Write down (or **take a photo** of):
-   - **The MMI firmware name.** Long text such as `MHI2_ER_AU43x_P4xxx_MU1xxx`. This is your **train**.
+   - **The MMI firmware name.** Long text such as `MHI2_ER_AU43x_P4204_MU1169`. This is your **train**. Sometimes it's shown in two pieces (for example `MHI2_ER_AU43x_P4204` and, elsewhere, `MU1169`). Write down both.
    - **The Virtual Cockpit (VC / instrument cluster) version.** A 4-digit number such as `0280` or `0296`.
 
-You can also see the MMI version without the hidden menu under **MENU → Settings → System information / Version information**.
+You can also see the MMI version without the hidden menu under **MENU → Settings → System information / Version information**. The exact wording depends on your current version and language.
+
+Then use [Which firmware file do I need?](#which-firmware-file-do-i-need) to pick your download.
 
 <!-- TODO: add your own photo: images/rem-version-screen.jpg -->
 
@@ -165,7 +185,7 @@ You can also see the MMI version without the hidden menu under **MENU → Settin
 
 | Your situation | Next |
 |---|---|
-| MU version **lower** than the target for your region (see [the table](#which-firmware-is-right-for-my-region)) | Do **Step 2** |
+| MU version **lower** than the recommended file for your region (see [the table](#which-firmware-file-do-i-need)) | Do **Step 2** |
 | MU version is already the target or higher | Skip to **Step 3** |
 | Virtual Cockpit version **lower than 0296** | You will also need **Step 3** |
 | Virtual Cockpit version **0296 or higher** | You can skip **Step 3** |
@@ -184,7 +204,7 @@ You can also see the MMI version without the hidden menu under **MENU → Settin
    | Your car | Search for |
    |---|---|
    | Europe / UK | `MHI2_ER_AU43x` or `1339` |
-   | USA / Canada | `MHI2_US_AU43x` or `1389` / `1462` |
+   | USA / Canada | `MHI2_US_AU43x` or `1462` / `1389` |
    | Japan | `MHI2_JP_AU43x` |
 
    Example: [mibvault.com/search?q=1339](https://mibvault.com/search?q=1339)
@@ -257,6 +277,8 @@ The firmware update alone **does not** switch on CarPlay/Android Auto. The free 
    `MHI2_ER_AU43x_P5098_MU1339_PATCH`
 
    *mibsolution can be slow. The M.I.B. wiki links a [faster download mirror](https://mibwiki.one/share/99dda9a7-06e2-4673-a5df-2ea7e0eb18cb).*
+
+   **Alternative: mibvault** also hosts M.I.B. patch files. Search for your MU number plus `ifs`, for example `MU1339 ifs`. You're looking for a file like `MU1339-ifs-root-part2-0x00ba0000-xxxxxxxx.ifs` that sits in a folder named after **your exact firmware** (`M.I.B/MHI2_ER_AU43x_P5098_MU1339_PATCH`). On the SD card, create that same folder inside `patches` and put the `.ifs` file in it. *The mibsolution download is easier: it already includes the right folder and the extra files (`addfec.txt` and others) M.I.B. needs.*
 
 ### 4.2 Prepare SD card #2
 
