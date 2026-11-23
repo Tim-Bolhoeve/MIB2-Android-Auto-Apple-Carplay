@@ -8,6 +8,9 @@ People pay **£200–£300** for this as a service. Usually that money goes to s
 
 ![Overview](images/overview.svg)
 
+> [!NOTE]
+> **This gives you wired CarPlay / Android Auto**: your phone connects with a USB cable. Want it **wireless**? Do this guide first, then add a wireless adapter (see [Going wireless](#going-wireless-optional)).
+
 > [!IMPORTANT]
 > **Read the whole guide once before you start.** Most problems come from skipping a check or using a bad SD card.
 > You do this **at your own risk**. If done carefully it is very safe, and the worst realistic outcome (power loss during an update) can usually be recovered. Still, nobody here is responsible for your car.
@@ -194,6 +197,7 @@ These are the newest versions that the M.I.B. tool supports (source: the [M.I.B.
 | **M.I.B. – More Incredible Bash** | free | **https://github.com/Mr-MIBonk/M.I.B._More-Incredible-Bash** |
 | **M.I.B. patch for your firmware** | free | From [mib.mibsolution.one](https://mib.mibsolution.one) (login: `guest` / `guest`) |
 | **A USB cable** for your phone | – | Must carry **data**, not just charge. Use the original Apple/Android cable, or the Audi AMI cable if your car has the AMI connector. |
+| *Optional:* wireless adapter | paid | Only if you want **wireless** CarPlay / Android Auto, see [Going wireless](#going-wireless-optional). |
 | Time | – | Plan **half a day**. Most of it is waiting. |
 
 **You do NOT need:** VCDS, OBDeleven, a laptop in the car, or any paid service. Everything is done with the SD cards and the buttons in the car.
@@ -507,6 +511,23 @@ The firmware update alone **does not** switch on CarPlay/Android Auto. The free 
 3. **iPhone:** unlock the phone and allow CarPlay when asked (Settings → General → CarPlay).
    **Android:** make sure the **Android Auto** app is installed and updated, unlock the phone and follow the prompts.
 4. In the MMI menu you'll now find **"Audi smartphone interface"**. CarPlay / Android Auto appears on the **MMI screen** (TT and R8: in the **Virtual Cockpit**). 🎉
+
+### Going wireless (optional)
+
+This guide enables **wired** CarPlay and Android Auto: the phone has to be plugged in with a USB cable. The MMI can't do wireless by itself.
+
+For **wireless**, buy a small adapter that plugs into the car's USB port (where your phone cable would go) and connects to your phone over Bluetooth and Wi-Fi. The car still thinks a phone is plugged in, so wired CarPlay / Android Auto has to work first (Steps 1–4).
+
+A popular option is **[AAWireless](https://www.aawireless.io)**. Pick the right model:
+
+| AAWireless model | Wireless Apple CarPlay | Wireless Android Auto |
+|---|---|---|
+| **AAWireless NANO** | ✅ | ✅ |
+| **AAWireless TWO+** (Plus) | ✅ | ✅ |
+| **AAWireless TWO** (not Plus) | ❌ | ✅ |
+
+> [!TIP]
+> **iPhone users:** make sure you buy the **NANO** or the **TWO+**. The regular **TWO** only does Android Auto.
 
 ---
 
