@@ -482,8 +482,6 @@ The firmware update alone **does not** switch on CarPlay/Android Auto. The free 
    - TT, Europe: `MHI2_ER_AU43x_P5098_MU1339_PATCH`
    - A4/A5/Q5/Q7 "Q" unit, Europe: `MHI2Q_ER_AUG22_P5092_MU1329_PATCH`
 
-   *mibsolution can be slow. The M.I.B. wiki links a [faster download mirror](https://mibwiki.one/share/99dda9a7-06e2-4673-a5df-2ea7e0eb18cb).*
-
    **Alternative: mibvault** also hosts M.I.B. patch files. Search for your MU number plus `ifs`, for example `MU1339 ifs`. You're looking for a file like `MU1339-ifs-root-part2-0x00ba0000-xxxxxxxx.ifs` that sits in a folder named after **your exact firmware** (`M.I.B/MHI2_ER_AU43x_P5098_MU1339_PATCH`). On the SD card, create that same folder inside `patches` and put the `.ifs` file in it. *The mibsolution download is easier: it already includes the right folder and the extra files (`addfec.txt` and others) M.I.B. needs.*
 
 ### 4.2 Prepare SD card #2
