@@ -29,17 +29,80 @@ People pay **£200–£300** for this as a service. Usually that money goes to s
 
 ## 1. Does this work for my car?
 
-Answer these three questions:
+Takes about **5 minutes**, sitting in your car. You don't need tools, a laptop or the hidden menus for this.
 
-| Question | How to check | Needed |
+![Eligibility check](images/eligibility-check.svg)
+
+### Check 1: Is it a Mk3 TT?
+
+The guide is for the **Audi TT, TTS and TT RS, generation 8S** (also called **Mk3**), Coupé and Roadster, built **2014 to 2023**.
+
+- The Mk3 is the TT **without a central screen**: everything (radio, map, phone) is shown in the **Virtual Cockpit** behind the steering wheel.
+- Not sure? Look at the vehicle identification number (VIN) on your registration papers or the bottom of the windscreen. In a Mk3, characters **7 and 8** are **`FV`** (Coupé/Roadster). Example: `TRU`**`ZZZ`**`FV`… → `FV` = Mk3 TT.
+
+### Check 2: Do you already have CarPlay?
+
+1. Press **MENU** on the MMI controls.
+2. Look for **"Audi smartphone interface"** (sometimes just **"Smartphone"**).
+
+- **Found it?** CarPlay / Android Auto is already active. Plug in your phone with a USB cable; **you don't need this guide**.
+- **Not there?** Continue with Check 3.
+
+### Check 3: Does it have MIB2 High (MHI2)?
+
+CarPlay through this guide only works on the **MIB2 High** system, also called **MHI2**. In a TT, that's the system that comes with **MMI Navigation plus**. There are two ways to check:
+
+**A. Quick check: do you have navigation?**
+
+1. Press **NAV/MAP**.
+2. Do you get a **full map** in the Virtual Cockpit (with the option to enter a destination)?
+
+- **Yes:** you almost certainly have MHI2. Go to B to be 100% sure.
+- **No map / only a compass or "navigation not available":** you probably don't have MMI Navigation plus. Check B anyway: if the name doesn't start with `MHI2_`, **this guide doesn't work for your car**.
+
+**B. Sure check: read the system name (recommended)**
+
+1. Press **MENU** → **Settings** (on some versions: *Setup MMI* or *System*) → **Version information** (or *System information*).
+2. Look for a long code such as `MHI2_ER_AU43x_P4204_MU1169`.
+
+Can't find it in the normal menu? Use the **Red Engineering Menu** instead (NAV/MAP up + RADIO down, hold about 5 s, see [3.4](#34-the-hidden-menus-red-and-green-engineering-menu)) → **Version information**. It's always shown there.
+
+**What does the name mean?**
+
+| The name starts with… | What you have | Can you use this guide? |
 |---|---|---|
-| Is it an Audi TT, TTS or TT RS **8S** (Mk3, 2014–2023)? | Your registration papers, or the model year | Yes |
-| Does it have **MMI Navigation plus** (map on the Virtual Cockpit)? | Press **NAV/MAP**. Do you get a map? | Yes |
-| Does the firmware name start with **`MHI2_`**? | See [Step 1](#step-1-check-your-versions) | Yes |
+| `MHI2_ER_AU43x_` | MIB2 High, TT, Europe / rest of world | ✅ **Yes** |
+| `MHI2_US_AU43x_` | MIB2 High, TT, USA / Canada | ✅ **Yes** |
+| `MHI2_JP_AU43x_` | MIB2 High, TT, Japan | ✅ **Yes** (fewer downloads available) |
+| `MHI2_ER_AUG24_` | MIB2 High, very early TT | ⚠️ **Ask first.** See [the note below](#which-firmware-file-do-i-need) |
+| `MHI2_` + another code (`AU37x`, `AUG22`, `AU57x`...) | MIB2 High, but **not a TT** | ❌ Not this guide (the method works, but you need other files) |
+| `MHI2Q_...` | MIB2 High "Q" (other models) | ❌ No |
+| `MST2_...`, `MSTD_...`, `MHS2_...` or anything else | **Not** MIB2 High | ❌ No. M.I.B. does not work on these systems |
 
-- If the firmware name starts with **`MHI2_xx_AU43x_`**, this guide is for you.
-- If it starts with something else (for example `MHI2Q_`, `MST2_`, `MHS2_`), **stop**. Your car has a different system and this guide does not apply.
-- Already have CarPlay? Look in the MMI menu for **"Audi smartphone interface"**. If it is already there, you are done.
+> [!TIP]
+> **Take a photo of this screen.** You'll need the exact name again in [Step 1](#step-1-check-your-versions) and to pick the right download.
+
+### Check 4: Does your USB port carry data?
+
+CarPlay and Android Auto need a USB connection **to the MMI**, not just a charging port.
+
+1. Put some music on a USB stick (or connect your phone with a cable).
+2. Plug it into the car's USB / AMI port.
+3. Press **MEDIA**. Can you select the USB stick / phone as a source and play music?
+
+- **Yes:** ✅ your port works for CarPlay.
+- **No / it only charges:** try the other port (if you have one) or a different cable. If no port shows up under MEDIA, your car may need a USB / AMI retrofit first; ask in the [TT Forum](https://www.ttforum.co.uk/threads/faq-audi-tt-mk3-8s-firmware-updates.1970533/).
+
+### Result
+
+| Check | Needed |
+|---|---|
+| 1. Mk3 TT (8S) | ✅ |
+| 2. No "Audi smartphone interface" yet | ✅ (otherwise you're already done) |
+| 3. System name starts with `MHI2_xx_AU43x_` | ✅ |
+| 4. USB port plays media | ✅ |
+
+**All four OK?** This guide is for you. Continue with [What you need](#2-what-you-need).
 
 ### Which firmware file do I need?
 

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect width="900" height="560" fill="#ffffff"/>
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8c959f"/></marker>
+  </defs>
+  <text x="450" y="32" text-anchor="middle" font-size="20" font-weight="700" fill="#1f2328">Can I use this guide? (5-minute check)</text>
+
+  <g font-size="14" fill="#1f2328" text-anchor="middle">
+    <!-- Q1 -->
+    <rect x="250" y="55" width="400" height="56" rx="10" fill="#eef4ff" stroke="#0969da" stroke-width="2"/>
+    <text x="450" y="79" font-weight="700">1. Is it a Mk3 TT / TTS / TT RS (8S)?</text>
+    <text x="450" y="99" font-size="12" fill="#57606a">No central screen · VIN characters 7-8 = "FV"</text>
+    <!-- Q2 -->
+    <rect x="250" y="155" width="400" height="56" rx="10" fill="#eef4ff" stroke="#0969da" stroke-width="2"/>
+    <text x="450" y="179" font-weight="700">2. Is "Audi smartphone interface" in MENU?</text>
+    <text x="450" y="199" font-size="12" fill="#57606a">Press MENU and look through the list</text>
+    <!-- Q3 -->
+    <rect x="250" y="255" width="400" height="56" rx="10" fill="#eef4ff" stroke="#0969da" stroke-width="2"/>
+    <text x="450" y="279" font-weight="700">3. Does the system name start with MHI2_xx_AU43x_ ?</text>
+    <text x="450" y="299" font-size="12" fill="#57606a">MENU → Settings → Version information</text>
+    <!-- Q4 -->
+    <rect x="250" y="355" width="400" height="56" rx="10" fill="#eef4ff" stroke="#0969da" stroke-width="2"/>
+    <text x="450" y="379" font-weight="700">4. Does music from USB play under MEDIA?</text>
+    <text x="450" y="399" font-size="12" fill="#57606a">USB stick or phone with a cable</text>
+    <!-- Result OK -->
+    <rect x="250" y="460" width="400" height="60" rx="10" fill="#dafbe1" stroke="#1a7f37" stroke-width="2"/>
+    <text x="450" y="487" font-weight="700" fill="#1a7f37" font-size="16">✔ Your car is eligible</text>
+    <text x="450" y="507" font-size="12" fill="#1a7f37">Continue with "What you need"</text>
+
+    <!-- side results -->
+    <rect x="700" y="58" width="180" height="50" rx="10" fill="#ffebe9" stroke="#cf222e"/>
+    <text x="790" y="80" font-weight="700" fill="#cf222e">✘ Not this guide</text>
+    <text x="790" y="97" font-size="11" fill="#57606a">other car model</text>
+
+    <rect x="700" y="158" width="180" height="50" rx="10" fill="#dafbe1" stroke="#1a7f37"/>
+    <text x="790" y="180" font-weight="700" fill="#1a7f37">✔ Already active!</text>
+    <text x="790" y="197" font-size="11" fill="#57606a">just plug in your phone</text>
+
+    <rect x="700" y="258" width="180" height="50" rx="10" fill="#ffebe9" stroke="#cf222e"/>
+    <text x="790" y="280" font-weight="700" fill="#cf222e">✘ Not supported</text>
+    <text x="790" y="297" font-size="11" fill="#57606a">(AUG24: ask first)</text>
+
+    <rect x="700" y="358" width="180" height="50" rx="10" fill="#fff8c5" stroke="#9a6700"/>
+    <text x="790" y="380" font-weight="700" fill="#9a6700">⚠ Fix USB first</text>
+    <text x="790" y="397" font-size="11" fill="#57606a">other port / cable / retrofit</text>
+  </g>
+
+  <g stroke="#8c959f" stroke-width="2" fill="none" marker-end="url(#a)">
+    <line x1="450" y1="111" x2="450" y2="152"/>
+    <line x1="450" y1="211" x2="450" y2="252"/>
+    <line x1="450" y1="311" x2="450" y2="352"/>
+    <line x1="450" y1="411" x2="450" y2="457"/>
+    <line x1="650" y1="83"  x2="697" y2="83"/>
+    <line x1="650" y1="183" x2="697" y2="183"/>
+    <line x1="650" y1="283" x2="697" y2="283"/>
+    <line x1="650" y1="383" x2="697" y2="383"/>
+  </g>
+  <g font-size="13" font-weight="700">
+    <text x="460" y="137" fill="#1a7f37">yes</text>
+    <text x="460" y="237" fill="#1a7f37">no</text>
+    <text x="460" y="337" fill="#1a7f37">yes</text>
+    <text x="460" y="437" fill="#1a7f37">yes</text>
+    <text x="662" y="76" fill="#cf222e">no</text>
+    <text x="662" y="176" fill="#1a7f37">yes</text>
+    <text x="662" y="276" fill="#cf222e">no</text>
+    <text x="662" y="376" fill="#9a6700">no</text>
+  </g>
+</svg>
