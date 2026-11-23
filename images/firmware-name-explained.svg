@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="300" viewBox="0 0 1000 300" font-family="Segoe UI, Helvetica, Arial, sans-serif">
-  <rect width="1000" height="300" fill="#ffffff"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="320" viewBox="0 0 1000 320" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect width="1000" height="320" fill="#ffffff"/>
   <text x="500" y="32" text-anchor="middle" font-size="20" font-weight="700" fill="#1f2328">How to read a firmware name</text>
   <g font-family="Consolas, Menlo, monospace" font-size="34" font-weight="700" text-anchor="middle">
     <rect x="40"  y="60" width="140" height="60" rx="8" fill="#ddf4ff" stroke="#0969da"/>
@@ -20,7 +20,8 @@
   <g font-size="14" fill="#1f2328" text-anchor="middle">
     <text x="110" y="150" font-weight="700" fill="#0969da">Hardware</text>
     <text x="110" y="170">MHI2 = MIB2 High</text>
-    <text x="110" y="190">(MHI2Q is different!)</text>
+    <text x="110" y="190">MHI2Q = "Q" variant</text>
+    <text x="110" y="210">(never swap them)</text>
 
     <text x="257" y="150" font-weight="700" fill="#9a6700">Region</text>
     <text x="257" y="170">ER = Europe / RoW</text>
@@ -28,9 +29,10 @@
     <text x="257" y="210">JP = Japan, CN = China</text>
 
     <text x="409" y="150" font-weight="700" fill="#cf222e">Car family</text>
-    <text x="409" y="170">AU43x = Audi TT</text>
-    <text x="409" y="190">(AUG22, AU57x ... are</text>
-    <text x="409" y="210">other Audi models)</text>
+    <text x="420" y="170" font-size="13">AU43x TT · AU37x A3</text>
+    <text x="420" y="188" font-size="13">AU276 Q2 · AU62x R8</text>
+    <text x="420" y="206" font-size="13">AU57x A6/A7</text>
+    <text x="420" y="224" font-size="13">AUG22 A4/A5/Q5/Q7</text>
 
     <text x="591" y="150" font-weight="700" fill="#8250df">Release</text>
     <text x="591" y="170">P = production release</text>
@@ -41,6 +43,6 @@
     <text x="788" y="190">people talk about</text>
     <text x="788" y="210">(e.g. "1339")</text>
   </g>
-  <rect x="40" y="240" width="920" height="44" rx="8" fill="#fff8c5" stroke="#d4a72c"/>
-  <text x="500" y="268" text-anchor="middle" font-size="15" fill="#1f2328"><tspan font-weight="700">Golden rule:</tspan> the first three parts (hardware_region_car) of the new firmware must be EXACTLY the same as in your car.</text>
+  <rect x="40" y="260" width="920" height="44" rx="8" fill="#fff8c5" stroke="#d4a72c"/>
+  <text x="500" y="288" text-anchor="middle" font-size="15" fill="#1f2328"><tspan font-weight="700">Golden rule:</tspan> the first three parts (hardware_region_car) of the new firmware must be EXACTLY the same as in your car.</text>
 </svg>

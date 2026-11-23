@@ -22,8 +22,8 @@
     <rect x="410" y="60" width="170" height="130" rx="12" fill="#eef4ff" stroke="#0969da" stroke-width="2"/>
     <text x="495" y="92" font-size="28" font-weight="700" fill="#0969da">3</text>
     <text x="495" y="122" font-weight="600">Update Virtual</text>
-    <text x="495" y="142" font-weight="600">Cockpit (0296+)</text>
-    <text x="495" y="168" font-size="12" fill="#57606a">only if needed</text>
+    <text x="495" y="142" font-weight="600">Cockpit</text>
+    <text x="495" y="168" font-size="12" fill="#57606a">TT / R8 only, if needed</text>
 
     <rect x="605" y="60" width="170" height="130" rx="12" fill="#eef4ff" stroke="#0969da" stroke-width="2"/>
     <text x="690" y="92" font-size="28" font-weight="700" fill="#0969da">4</text>

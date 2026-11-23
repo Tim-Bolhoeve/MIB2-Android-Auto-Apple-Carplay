@@ -1,6 +1,8 @@
-# Apple CarPlay & Android Auto on an Audi TT (8S): free DIY guide
+# Apple CarPlay & Android Auto on Audi MIB2 High (MHI2): free DIY guide
 
-A step-by-step guide to enabling **Apple CarPlay** and **Android Auto** on an **Audi TT / TTS / TT RS (8S, 2014–2023)** with the **MIB2 High (MHI2)** infotainment system, using only **SD cards and free tools**.
+A step-by-step guide to enabling **Apple CarPlay** and **Android Auto** on **every Audi with the MIB2 High (MHI2 / MHI2Q) infotainment system**, using only **SD cards and free tools**:
+
+**A3 / S3 / RS3 (8V) · Q2 · TT / TTS / TT RS (8S) · R8 (4S) · A4 (B9) · A5 (F5) · Q5 (FY) · Q7 (4M) · A6 / A7 (C7)**, roughly model years **2015–2020**, in Europe, the US and other regions.
 
 People pay **£200–£300** for this as a service. Usually that money goes to someone putting freely available software on SD cards and posting them to you. This guide gives you the same know-how for free.
 
@@ -15,15 +17,16 @@ People pay **£200–£300** for this as a service. Usually that money goes to s
 ## Contents
 
 1. [Does this work for my car?](#1-does-this-work-for-my-car)
-2. [What you need](#2-what-you-need)
-3. [Before you start: power, SD cards and the hidden menus](#3-before-you-start-power-sd-cards-and-the-hidden-menus)
-4. [Step 1: Check your versions](#step-1-check-your-versions)
-5. [Step 2: Update the MMI firmware](#step-2-update-the-mmi-firmware)
-6. [Step 3: Update the Virtual Cockpit (only if below 0296)](#step-3-update-the-virtual-cockpit-only-if-below-0296)
-7. [Step 4: Install M.I.B. and activate CarPlay / Android Auto](#step-4-install-mib-and-activate-carplay--android-auto)
-8. [Step 5: Connect your phone](#step-5-connect-your-phone)
-9. [Troubleshooting](#troubleshooting)
-10. [Links and credits](#links-and-credits)
+2. [Which firmware file do I need?](#2-which-firmware-file-do-i-need)
+3. [What you need](#3-what-you-need)
+4. [Before you start: power, SD cards and the hidden menus](#4-before-you-start-power-sd-cards-and-the-hidden-menus)
+5. [Step 1: Check your versions](#step-1-check-your-versions)
+6. [Step 2: Update the MMI firmware](#step-2-update-the-mmi-firmware)
+7. [Step 3: Update the Virtual Cockpit (TT and R8 only)](#step-3-update-the-virtual-cockpit-tt-and-r8-only)
+8. [Step 4: Install M.I.B. and activate CarPlay / Android Auto](#step-4-install-mib-and-activate-carplay--android-auto)
+9. [Step 5: Connect your phone](#step-5-connect-your-phone)
+10. [Troubleshooting](#troubleshooting)
+11. [Links and credits](#links-and-credits)
 
 ---
 
@@ -33,12 +36,25 @@ Takes about **5 minutes**, sitting in your car. You don't need tools, a laptop o
 
 ![Eligibility check](images/eligibility-check.svg)
 
-### Check 1: Is it a Mk3 TT?
+### Check 1: Is your Audi on the list?
 
-The guide is for the **Audi TT, TTS and TT RS, generation 8S** (also called **Mk3**), Coupé and Roadster, built **2014 to 2023**.
+These Audis were sold with **MMI Navigation plus on MIB2 High**:
 
-- The Mk3 is the TT **without a central screen**: everything (radio, map, phone) is shown in the **Virtual Cockpit** behind the steering wheel.
-- Not sure? Look at the vehicle identification number (VIN) on your registration papers or the bottom of the windscreen. In a Mk3, characters **7 and 8** are **`FV`** (Coupé/Roadster). Example: `TRU`**`ZZZ`**`FV`… → `FV` = Mk3 TT.
+| Model | Generation | Approx. years | VIN characters 7–8 | Where CarPlay appears |
+|---|---|---|---|---|
+| A3 / S3 / RS3 | 8V (facelift) | 2016–2020 | `8V` | MMI screen |
+| Q2 | GA | 2016–2020 | `GA` | MMI screen |
+| TT / TTS / TT RS | 8S (Mk3) | 2014–2023 | `FV` | **Virtual Cockpit** (no central screen) |
+| R8 | 4S (Mk2) | 2015–2023 | `4S` | **Virtual Cockpit** (no central screen) |
+| A4 / S4 / RS4 | B9 (pre-facelift) | 2016–2019 | `8W` | MMI screen |
+| A5 / S5 / RS5 | F5 (pre-facelift) | 2017–2019 | `F5` | MMI screen |
+| Q5 / SQ5 | FY (pre-facelift) | 2017–2020 | `FY` | MMI screen |
+| Q7 / SQ7 | 4M (pre-facelift) | 2016–2019 | `4M` | MMI screen |
+| A6 / A7 | C7 (facelift) | 2015–2018 | `4G` | MMI screen |
+
+- **The VIN** (vehicle identification number) is on your registration papers and at the bottom of the windscreen. Characters 7 and 8 give the model, for example `WAUZZZ`**`8V`**`…` = A3 8V.
+- **Years are approximate** and differ by country. The model years and options are only a hint: **Check 3 is what really decides it.**
+- **Not covered:** older A3s with MIB1 (2012–2016 pre-facelift), and newer models with **MIB3** or **MIB2+** (A1, A4/A5 2020+, A6/A7/A8 C8/D5, Q3 2019+, Q8, e-tron...). Most of those have CarPlay from the factory.
 
 ### Check 2: Do you already have CarPlay?
 
@@ -50,34 +66,32 @@ The guide is for the **Audi TT, TTS and TT RS, generation 8S** (also called **Mk
 
 ### Check 3: Does it have MIB2 High (MHI2)?
 
-CarPlay through this guide only works on the **MIB2 High** system, also called **MHI2**. In a TT, that's the system that comes with **MMI Navigation plus**. There are two ways to check:
+CarPlay through this guide only works on the **MIB2 High** system, also called **MHI2** (or **MHI2Q** on some A4/A5/Q5/Q7). That's the system that comes with **MMI Navigation plus**. There are two ways to check:
 
 **A. Quick check: do you have navigation?**
 
 1. Press **NAV/MAP**.
-2. Do you get a **full map** in the Virtual Cockpit (with the option to enter a destination)?
+2. Do you get a **full map** (with the option to enter a destination)?
 
-- **Yes:** you almost certainly have MHI2. Go to B to be 100% sure.
-- **No map / only a compass or "navigation not available":** you probably don't have MMI Navigation plus. Check B anyway: if the name doesn't start with `MHI2_`, **this guide doesn't work for your car**.
+- **Yes:** you probably have MHI2. Go to B to be 100% sure.
+- **No map:** you probably have a smaller system (MIB2 Standard). Check B anyway: if the name doesn't start with `MHI2`, **this guide doesn't work for your car**.
 
 **B. Sure check: read the system name (recommended)**
 
 1. Press **MENU** → **Settings** (on some versions: *Setup MMI* or *System*) → **Version information** (or *System information*).
 2. Look for a long code such as `MHI2_ER_AU43x_P4204_MU1169`.
 
-Can't find it in the normal menu? Use the **Red Engineering Menu** instead (NAV/MAP up + RADIO down, hold about 5 s, see [3.4](#34-the-hidden-menus-red-and-green-engineering-menu)) → **Version information**. It's always shown there.
+Can't find it in the normal menu? Use the **Red Engineering Menu** instead (see [4.4](#44-the-hidden-menus-red-and-green-engineering-menu)) → **Version information**. It's always shown there.
 
 **What does the name mean?**
 
 | The name starts with… | What you have | Can you use this guide? |
 |---|---|---|
-| `MHI2_ER_AU43x_` | MIB2 High, TT, Europe / rest of world | ✅ **Yes** |
-| `MHI2_US_AU43x_` | MIB2 High, TT, USA / Canada | ✅ **Yes** |
-| `MHI2_JP_AU43x_` | MIB2 High, TT, Japan | ✅ **Yes** (fewer downloads available) |
-| `MHI2_ER_AUG24_` | MIB2 High, very early TT | ⚠️ **Ask first.** See [the note below](#which-firmware-file-do-i-need) |
-| `MHI2_` + another code (`AU37x`, `AUG22`, `AU57x`...) | MIB2 High, but **not a TT** | ❌ Not this guide (the method works, but you need other files) |
-| `MHI2Q_...` | MIB2 High "Q" (other models) | ❌ No |
-| `MST2_...`, `MSTD_...`, `MHS2_...` or anything else | **Not** MIB2 High | ❌ No. M.I.B. does not work on these systems |
+| `MHI2_` | MIB2 High | ✅ **Yes** |
+| `MHI2Q_` | MIB2 High "Q" (A4/A5/Q5/Q7) | ✅ **Yes** |
+| `MHI2_ER_AUG24_` | MIB2 High, very early TT | ⚠️ **Ask first**, see the [firmware notes](#2-which-firmware-file-do-i-need) |
+| `MHIG_...` | MIB1 High (older A3 and others) | ❌ No. No CarPlay possible with this method |
+| `MST2_...`, `MHS2_...`, `MH2P_...` or anything else | **Not** MIB2 High | ❌ No. M.I.B. does not work on these systems |
 
 > [!TIP]
 > **Take a photo of this screen.** You'll need the exact name again in [Step 1](#step-1-check-your-versions) and to pick the right download.
@@ -91,56 +105,84 @@ CarPlay and Android Auto need a USB connection **to the MMI**, not just a chargi
 3. Press **MEDIA**. Can you select the USB stick / phone as a source and play music?
 
 - **Yes:** ✅ your port works for CarPlay.
-- **No / it only charges:** try the other port (if you have one) or a different cable. If no port shows up under MEDIA, your car may need a USB / AMI retrofit first; ask in the [TT Forum](https://www.ttforum.co.uk/threads/faq-audi-tt-mk3-8s-firmware-updates.1970533/).
+- **No / it only charges:** try the other port (if you have one) or a different cable. If no port shows up under MEDIA, your car may need a USB / AMI retrofit first; ask in a forum for your model (see [Troubleshooting](#troubleshooting)).
 
 ### Result
 
 | Check | Needed |
 |---|---|
-| 1. Mk3 TT (8S) | ✅ |
+| 1. Your Audi is on the list | ✅ |
 | 2. No "Audi smartphone interface" yet | ✅ (otherwise you're already done) |
-| 3. System name starts with `MHI2_xx_AU43x_` | ✅ |
+| 3. System name starts with `MHI2_` or `MHI2Q_` | ✅ |
 | 4. USB port plays media | ✅ |
 
-**All four OK?** This guide is for you. Continue with [What you need](#2-what-you-need).
+**All four OK?** This guide is for you. Continue with [Which firmware file do I need?](#2-which-firmware-file-do-i-need)
 
-### Which firmware file do I need?
+---
 
-**There is no conversion table to look up.** Your car tells you directly: the MMI shows its own firmware name (see [Step 1](#step-1-check-your-versions)), and the files on mibvault are named the same way. You only need to match them.
+## 2. Which firmware file do I need?
 
-The **Virtual Cockpit version** (for example `0280` or `0296`) has **nothing to do with** which MMI file you need. They are two separate devices with separate updates. You need **both**:
-- the MMI on the right firmware (this section), **and**
-- the Virtual Cockpit on **0296 or higher** ([Step 3](#step-3-update-the-virtual-cockpit-only-if-below-0296)).
+**There is no conversion table to look up.** Your car tells you directly: the MMI shows its own firmware name ([Step 1](#step-1-check-your-versions)), and the files on mibvault are named the same way. You only need to match them.
+
+### How to read a firmware name
+
+![Firmware name explained](images/firmware-name-explained.svg)
 
 **Recipe:**
 
 1. Read your firmware name in the car, for example `MHI2_ER_AU43x_P4204_MU1169`.
-2. Keep only the **first three parts**: `MHI2_ER_AU43x`. This is your "family".
-3. In the table below, find the row with that family and download the **recommended file**.
+2. Keep only the **first three parts**: `MHI2_ER_AU43x`. This is your **family**.
+3. Find that family in the table below and use the **recommended version**.
 
-**Audi TT files on mibvault** (as listed in November 2026):
+### Recommended firmware per family
 
-| Your car shows | Region | Recommended file on mibvault | Size | Other TT files for this family (older) |
-|---|---|---|---|---|
-| `MHI2_ER_AU43x_...` | Europe / UK / rest of world | **`MHI2_ER_AU43x_P5098_MU1339 (TT).7z`** ✅ *Flashed OK ×3* | 2.0 GB | `MHI2_ER_AU43x_P4204_MU1169.7z`, `MHI2_ER_AU43x_K1074_1_MU0884 (TT).7z` |
-| `MHI2_US_AU43x_...` | USA / Canada | **`MHI2_US_AU43x_P5180_MU1462_4M0906961EK.7z`** (newest)<br>or `MHI2_US_AU43x_P5124_MU1389 (TT).7z` (minimum for CarPlay) | 777 MB / 773 MB | `MHI2_US_AU43x_K1083_MU1412_4M0906961CJ.7z`, `MHI2_US_AU43x_K1075_MU0885 (TT).7z` |
-| `MHI2_JP_AU43x_...` | Japan | Not seen on mibvault yet. Target `P0902_MU0902` (see the [M.I.B. table](https://github.com/Mr-MIBonk/M.I.B._More-Incredible-Bash/wiki/MHI2-M.I.B.-patch-FW-compatibility-table)) | – | – |
-| `MHI2_ER_AUG24_...` | Europe, **early TTs** (around 2014–2015) | See the note below ⚠️ | – | `MHI2_ER_AUG24_K1068_MU0364 (TT).7z` |
-| Anything else | – | **Stop**: ask for help first (see [Troubleshooting](#troubleshooting)) | – | – |
+These are the newest versions that the M.I.B. tool supports (source: the [M.I.B. compatibility table](https://github.com/Mr-MIBonk/M.I.B._More-Incredible-Bash/wiki/MHI2-M.I.B.-patch-FW-compatibility-table)), and the files we've seen on [mibvault](https://mibvault.com) (November 2026).
 
-Notes:
-- **"MU" = the version number.** Higher means newer. You can only go **up** to a file with a higher MU than you have now; don't install an older one.
-- **The extra code at the end** of some names (for example `4M0906961EK`) is Audi's **software part number** for that firmware. You don't need to match it. It's just extra information from whoever uploaded the file.
-- **Early TTs showing `AUG24`:** mibvault marks `AUG24` firmware as TT, but `AUG24` is very old (MU0364), and I couldn't confirm whether these cars can go straight to `AU43x`. Ask in the [TT Forum firmware FAQ](https://www.ttforum.co.uk/threads/faq-audi-tt-mk3-8s-firmware-updates.1970533/) before flashing.
-- Newer European versions also exist (`P5151_MU1339`, `P5404_MU1479`, `P5406_MU1489`, per the [M.I.B. table](https://github.com/Mr-MIBonk/M.I.B._More-Incredible-Bash/wiki/MHI2-M.I.B.-patch-FW-compatibility-table)), but **P5098 / MU1339 is the proven one** for CarPlay on the TT.
+**Europe / UK / rest of world (`_ER_`)**
+
+| Your family | Models | Recommended version | Seen on mibvault |
+|---|---|---|---|
+| `MHI2_ER_AU37x` | A3 / S3 / RS3 | `P5153_MU1326` or `P5089_MU1326` | `MHI2_ER_AU37x_P4203_MU1168 (A3).7z` (older, but supported) |
+| `MHI2_ER_AU276` | Q2 | `P5510_MU1477` | – (search `AU276`) |
+| `MHI2_ER_AU43x` | TT / TTS / TT RS | **`P5098_MU1339`** | ✅ `MHI2_ER_AU43x_P5098_MU1339 (TT).7z` (*Flashed OK ×3*) |
+| `MHI2_ER_AU62x` | R8 | `P5099_MU1340` | Only older ones: `K3331_MU1028 (R8)`, `K1078_MU0916 (R8)` |
+| `MHI2_ER_AUG22` | A4 / A5 / Q5 / Q7 | `K3344_MU1438` or `K3346_MU1438` | ✅ `MHI2_ER_AUG22_K3344_MU1438 (A4-A5-Q5-Q7).7z` (*Flashed OK*), `…_K3346_MU1438 (A4-A5-Q5-Q7).7z` |
+| `MHI2Q_ER_AUG22` | A4 / A5 / Q5 / Q7 ("Q" unit) | `P5092_MU1329` | ✅ `MHI2Q_ER_AUG22_P5092_MU1329 (A4-A5-Q5-Q7).7z` (*Flashed OK ×4*) |
+| `MHI2_ER_AU57x` | A6 / A7 | `K2589_MU1429` | ✅ `MHI2_ER_AU57x_K2589_MU1429 (A6-A7).7z` |
+
+**USA / Canada (`_US_`)**
+
+| Your family | Models | Recommended version | Seen on mibvault |
+|---|---|---|---|
+| `MHI2_US_AU37x` | A3 / S3 / RS3 | `K5512_1_MU1484` | ✅ `MHI2_US_AU37x_K5512_1_MU1484 (A3).7z` (*Flashed OK*) |
+| `MHI2_US_AU276` | Q2 | `P5083_MU1312` | ✅ `MHI2_US_AU276_P5083_MU1312 (Q2).7z` |
+| `MHI2_US_AU43x` | TT / TTS / TT RS | `P5180_MU1462` (minimum for CarPlay: `P5124_MU1389`) | ✅ `MHI2_US_AU43x_P5180_MU1462_4M0906961EK.7z`, `MHI2_US_AU43x_P5124_MU1389 (TT).7z` |
+| `MHI2_US_AU62x` | R8 | `P5181_MU1463` | ✅ `MHI2_US_AU62x_P5181_MU1463_4M0906961EL.7z` |
+| `MHI2_US_AUG22` | A4 / A5 / Q5 / Q7 | `K3347_MU1439` or `K3345_MU1439` | ✅ `MHI2_US_AUG22_K3347_MU1439 (A4-A5-Q5-Q7).7z`, `…_K3345_MU1439 (A4-A5-Q5-Q7) 4M0906961CQ.7z` |
+| `MHI2Q_US_AUG22` | A4 / A5 / Q5 / Q7 ("Q" unit) | `P5087_MU1316` | ✅ `MHI2Q_US_AUG22_P5087_MU1316 (A4-A5-Q5-Q7).7z` |
+| `MHI2_US_AU57x` | A6 / A7 | `K3341_MU1426` | ✅ `MHI2_US_AU57x_K3341_MU1426.7z` |
+
+**Other regions (`_JP_`, `_CN_`, `_KR_`, `_TW_`)**: check the [M.I.B. compatibility table](https://github.com/Mr-MIBonk/M.I.B._More-Incredible-Bash/wiki/MHI2-M.I.B.-patch-FW-compatibility-table) for the versions supported for your family (for example `MHI2_JP_AU43x_P0902_MU0902` for a Japanese TT).
+
+### Important notes
+
+- **Already on the recommended version (or a newer one from the M.I.B. table)?** You can **skip Step 2**.
+- **"MU" = the version number.** Higher means newer. Only go **up** to a file with a higher MU than you have now; never install an older one.
+- **Two options in one row** (for example `K3344` or `K3346`)? Both are fine for that family. If the car refuses one, use the other.
+- **The extra code at the end** of some file names (for example `4M0906961EK`) is Audi's **software part number** for that firmware. You don't need to match it.
+- **The recommended version isn't on mibvault?** Pick the newest version **for your family** that *is* on mibvault **and** in the [M.I.B. table](https://github.com/Mr-MIBonk/M.I.B._More-Incredible-Bash/wiki/MHI2-M.I.B.-patch-FW-compatibility-table). M.I.B. needs a patch for exactly that version.
+- **Early TTs showing `AUG24`:** mibvault marks `MHI2_ER_AUG24_K1068_MU0364 (TT)` as TT firmware, but it's very old, and I couldn't confirm whether these cars can go straight to `AU43x`. Ask in the [TT Forum firmware FAQ](https://www.ttforum.co.uk/threads/faq-audi-tt-mk3-8s-firmware-updates.1970533/) before flashing.
 - **Built-in safety net:** the MMI checks the update before installing. If you put a wrong file on the card, it will usually say the update is not valid or not compatible. Treat that as a "stop", and **don't** rely on it instead of checking the name yourself.
 
 > [!CAUTION]
-> **Never install firmware from another region or another car.** An `ER` car gets `ER` firmware, a `US` car gets `US` firmware. Files for `AUG22` (A4/A5/Q5/Q7), `AU37x` (A3), `AU57x` (A6/A7), `AU62x` (R8), `MHI2Q_...` and other brands (`VWG`, `SKG`, `SEG`, `POG`) are **not** for the TT, even if they look similar.
+> **The first three parts must match exactly.**
+> - Same **hardware**: `MHI2` stays `MHI2`, `MHI2Q` stays `MHI2Q`. **Never swap between them.**
+> - Same **region**: an `ER` car gets `ER` firmware, a `US` car gets `US` firmware.
+> - Same **family**: `AU37x` (A3), `AU276` (Q2), `AU43x` (TT), `AU62x` (R8), `AUG22` (A4/A5/Q5/Q7), `AU57x` (A6/A7). Files for VW/Škoda/SEAT/Porsche (`VWG`, `SKG`, `SEG`, `POG`) are **never** for an Audi.
 
 ---
 
-## 2. What you need
+## 3. What you need
 
 | Item | Cost | Notes |
 |---|---|---|
@@ -148,7 +190,7 @@ Notes:
 | **A Windows PC or Mac** with an SD card slot or reader | – | To prepare the SD cards. |
 | **7-Zip** (free) | free | To unpack downloads: [7-zip.org](https://www.7-zip.org/) |
 | **MMI firmware** for your car | free | From [mibvault.com](https://mibvault.com). See [Step 2](#step-2-update-the-mmi-firmware). |
-| **Virtual Cockpit update** (only if needed) | free | From [mibvault.com](https://mibvault.com). See [Step 3](#step-3-update-the-virtual-cockpit-only-if-below-0296). |
+| **Virtual Cockpit update** (TT/R8, only if needed) | free | From [mibvault.com](https://mibvault.com). See [Step 3](#step-3-update-the-virtual-cockpit-tt-and-r8-only). |
 | **M.I.B. – More Incredible Bash** | free | **https://github.com/Mr-MIBonk/M.I.B._More-Incredible-Bash** |
 | **M.I.B. patch for your firmware** | free | From [mib.mibsolution.one](https://mib.mibsolution.one) (login: `guest` / `guest`) |
 | **A USB cable** for your phone | – | Must carry **data**, not just charge. Use the original Apple/Android cable, or the Audi AMI cable if your car has the AMI connector. |
@@ -161,9 +203,9 @@ Notes:
 
 ---
 
-## 3. Before you start: power, SD cards and the hidden menus
+## 4. Before you start: power, SD cards and the hidden menus
 
-### 3.1 Keep the battery healthy
+### 4.1 Keep the battery healthy
 
 An update takes a long time, and **the MMI must never lose power during an update**. Pick one of these:
 
@@ -176,7 +218,7 @@ Also:
 - Close the doors and switch off the lights, A/C, seat heating and so on.
 - **Don't** turn the car off, open/lock the car, or remove the SD card while an update is running.
 
-### 3.2 Formatting an SD card
+### 4.2 Formatting an SD card
 
 Each SD card must be **freshly formatted as FAT32** before you put files on it.
 
@@ -191,35 +233,36 @@ Each SD card must be **freshly formatted as FAT32** before you put files on it.
 FAT32 not offered? The card is larger than 32 GB. Use a 16/32 GB card, or the free tool [Rufus](https://rufus.ie/) to format it as FAT32.
 Mac: Disk Utility → Erase → Format **MS-DOS (FAT)**, Scheme **Master Boot Record**.
 
-### 3.3 Where the SD slots are
+### 4.3 Where the SD slots are
 
-The MMI unit's two SD card slots are in the **glovebox**. Always use slot **SD1** (the left one / the one marked "1").
+The MMI has **two SD card slots**, labelled **SD1** and **SD2**. On most models they are in the **glovebox**. Always use slot **SD1** (usually the left one).
 
 <!-- TODO: add your own photo: images/tt-glovebox-sd-slots.jpg -->
 
-### 3.4 The hidden menus (Red and Green Engineering Menu)
+### 4.4 The hidden menus (Red and Green Engineering Menu)
 
 You'll use two hidden service menus. You open them by **pressing and holding two buttons at the same time for about 5 seconds** while you are on the **MMI home screen**.
-
-![Audi TT key combinations](images/audi-tt-hidden-menu-key-combinations.png)
 
 | Menu | What it's for | Available |
 |---|---|---|
 | **Red Engineering Menu (REM)** | Reading versions, installing updates from SD | Always |
 | **Green Engineering Menu (GEM)** | Running the M.I.B. tool | **Only after M.I.B. is installed** (Step 4) |
-| **Reboot** | Restarting the MMI (hold the red-marked controls ~10 s) | Always |
+| **Reboot** | Restarting the MMI (hold ~10 s) | Always |
 
-Press the buttons highlighted in **red**, in the direction of the arrows. The picture above is for the TT (and R8/A3). For the **Red Engineering Menu** on the TT, that means pressing **NAV/MAP up** and **RADIO down** at the same time and holding them.
+Find the row for **your model** and press the buttons highlighted in **red**, in the direction of the arrows:
 
-Other Audi models use different combinations:
+![Audi key combinations](images/audi-hidden-menu-key-combinations.png)
 
-<details>
-<summary>Key combinations for all Audi models (click to open)</summary>
-
-![All Audi key combinations](images/audi-hidden-menu-key-combinations.png)
+| Your car | Row to use |
+|---|---|
+| TT, R8, A3 / S3 / RS3 (2016+), Q2 | **"TT/R8/A3 -2016/2020"**. On the TT, the Red Engineering Menu is **NAV/MAP up + RADIO down**. |
+| A4 / A5 / Q5 (automatic) | **"A4/A5/Q5 2017-2020"** |
+| A4 with manual gearbox | **"A4 (8W) manual gearbox"** |
+| Q7 | **"Q7 MY 2014-2020"** |
+| A6 / A7 | **"A6/A7 MY 2015-2018"** |
+| A3 2012–2016 | Older MIB1 system, **not supported** by this guide (that's why it has no green menu) |
 
 Source: [M.I.B. wiki – hidden menus](https://github.com/Mr-MIBonk/M.I.B._More-Incredible-Bash/wiki).
-</details>
 
 **To leave a hidden menu:** press **BACK** a few times, or reboot the MMI.
 
@@ -227,33 +270,38 @@ Source: [M.I.B. wiki – hidden menus](https://github.com/Mr-MIBonk/M.I.B._More-
 
 ## Step 1: Check your versions
 
-You need **two version numbers** before downloading anything.
-
 1. Start the car (or switch the ignition on) and wait until the MMI has fully started.
-2. Go to the **home screen** and open the **Red Engineering Menu** (see [3.4](#34-the-hidden-menus-red-and-green-engineering-menu)).
+2. Go to the **home screen** and open the **Red Engineering Menu** (see [4.4](#44-the-hidden-menus-red-and-green-engineering-menu)).
 3. Open the **version information** screen.
 4. Write down (or **take a photo** of):
-   - **The MMI firmware name.** Long text such as `MHI2_ER_AU43x_P4204_MU1169`. This is your **train**. Sometimes it's shown in two pieces (for example `MHI2_ER_AU43x_P4204` and, elsewhere, `MU1169`). Write down both.
-   - **The Virtual Cockpit (VC / instrument cluster) version.** A 4-digit number such as `0280` or `0296`.
+   - **The MMI firmware name (all cars).** Long text such as `MHI2_ER_AU43x_P4204_MU1169`. This is your **train**. Sometimes it's shown in two pieces (for example `MHI2_ER_AU43x_P4204` and, elsewhere, `MU1169`). Write down both.
+   - **TT and R8 only: the Virtual Cockpit (VC / instrument cluster) version.** A 4-digit number such as `0280` or `0296`.
+
+   ![Train name in the engineering menu](https://user-images.githubusercontent.com/98130152/173677109-633cc78e-32e1-408b-836a-ea3a536a5126.png)
+
+   *Example from the M.I.B. wiki; the screen looks slightly different per model.*
 
 You can also see the MMI version without the hidden menu under **MENU → Settings → System information / Version information**. The exact wording depends on your current version and language.
 
-Then use [Which firmware file do I need?](#which-firmware-file-do-i-need) to pick your download.
-
 <!-- TODO: add your own photo: images/rem-version-screen.jpg -->
-
-### How to read the firmware name
-
-![Firmware name explained](images/firmware-name-explained.svg)
 
 ### What to do next
 
+**MMI firmware (all cars)**, compare with [the recommended version for your family](#recommended-firmware-per-family):
+
 | Your situation | Next |
 |---|---|
-| MU version **lower** than the recommended file for your region (see [the table](#which-firmware-file-do-i-need)) | Do **Step 2** |
-| MU version is already the target or higher | Skip to **Step 3** |
-| Virtual Cockpit version **lower than 0296** | You will also need **Step 3** |
-| Virtual Cockpit version **0296 or higher** | You can skip **Step 3** |
+| Your MU version is **lower** than the recommended one | Do **[Step 2](#step-2-update-the-mmi-firmware)** |
+| You're already on the recommended version (or a newer one from the M.I.B. table) | Skip Step 2 |
+
+**Virtual Cockpit**:
+
+| Your car | Virtual Cockpit version | Next |
+|---|---|---|
+| **TT** | **lower than 0296** | Do **[Step 3](#step-3-update-the-virtual-cockpit-tt-and-r8-only)** after Step 2 |
+| **TT** | **0296 or higher** | ✅ **Skip Step 3, go straight to [Step 4](#step-4-install-mib-and-activate-carplay--android-auto)** |
+| **R8** | any | Skip Step 3 for now. Only come back to it if CarPlay doesn't show up after Step 4 (see [Step 3](#step-3-update-the-virtual-cockpit-tt-and-r8-only)) |
+| **All other models** (A3, Q2, A4, A5, Q5, Q7, A6, A7) | not relevant | ✅ **Skip Step 3, go straight to [Step 4](#step-4-install-mib-and-activate-carplay--android-auto)**. CarPlay is shown on the MMI screen, not in the cockpit |
 
 ---
 
@@ -264,32 +312,32 @@ Then use [Which firmware file do I need?](#which-firmware-file-do-i-need) to pic
 ### 2.1 Download the firmware
 
 1. Go to **[mibvault.com](https://mibvault.com)**.
-2. Search using your **region and car family** plus the **target version**, for example:
+2. Search for your **family** (the first three parts of your firmware name), or the **MU number** of the recommended version. For example:
 
    | Your car | Search for |
    |---|---|
-   | Europe / UK | `MHI2_ER_AU43x` or `1339` |
-   | USA / Canada | `MHI2_US_AU43x` or `1462` / `1389` |
-   | Japan | `MHI2_JP_AU43x` |
+   | TT, Europe | `MHI2_ER_AU43x` or `1339` |
+   | A4 / A5 / Q5 / Q7, US | `MHI2_US_AUG22` or `1439` |
+   | A3, Europe | `MHI2_ER_AU37x` |
 
    Example: [mibvault.com/search?q=1339](https://mibvault.com/search?q=1339)
 
    ![mibvault search result for 1339](images/mibvault-search-1339.png)
 
 3. Check the result before you download it:
-   - The **name** starts exactly the same as your car's firmware. For a European TT that's **`MHI2_ER_AU43x_P5098_MU1339 (TT).7z`**.
+   - The **name** starts exactly the same as your car's firmware (same `MHI2`/`MHI2Q`, region and family), and has the **recommended version** ([see the table](#recommended-firmware-per-family)).
    - The labels say **MIB2 High**, **Brand: Audi**, and the right **Region** (for example *Europe/ROW*).
    - A green **"Flashed OK on MIB2 High"** label means other people have installed this file successfully.
    - Too many results? Use the **Head unit**, **Brand** and **Region** filters at the top.
-4. Click **Download** on the right. The file is large (about **2 GB**, in **.7z** format), so it can take a while.
+4. Click **Download** on the right. The files are large (about **1–4 GB**, usually **.7z**), so it can take a while.
 5. *Optional but recommended:* check that the download isn't damaged. The **fingerprint icon** next to the file shows its SHA-256 checksum. In Windows PowerShell, run `Get-FileHash "C:\path\to\the-file.7z"` and check that the long code matches.
 
 > [!CAUTION]
-> Check the first part of the name **three times**: `MHI2` + region (`ER`/`US`/`JP`...) + `AU43x` must match your car exactly.
+> Check the first part of the name **three times**: `MHI2`/`MHI2Q` + region (`ER`/`US`/`JP`...) + family (`AU43x`, `AUG22`...) must match your car exactly.
 
 ### 2.2 Put the firmware on SD card #1
 
-1. **Format** SD card #1 as FAT32 ([3.2](#32-formatting-an-sd-card)).
+1. **Format** SD card #1 as FAT32 ([4.2](#42-formatting-an-sd-card)).
 2. Unpack the downloaded file with **7-Zip**: right-click → *7-Zip* → *Extract here*.
 3. Copy the **contents** onto the SD card so that the file **`metainfo2.txt`** is **directly on the card**, not inside a folder:
 
@@ -299,8 +347,8 @@ Then use [Which firmware file do I need?](#which-firmware-file-do-i-need) to pic
 
 ### 2.3 Install it in the car
 
-1. Make sure the battery is taken care of ([3.1](#31-keep-the-battery-healthy)).
-2. Insert SD card #1 into slot **SD1** in the glovebox.
+1. Make sure the battery is taken care of ([4.1](#41-keep-the-battery-healthy)).
+2. Insert SD card #1 into slot **SD1**.
 3. Open the **Red Engineering Menu**.
 4. Choose **Update** (software update) → select the **SD card** as the source.
 5. The MMI shows the update package. Choose **Standard**, or:
@@ -308,27 +356,36 @@ Then use [Which firmware file do I need?](#which-firmware-file-do-i-need) to pic
 6. Confirm and **start** the update.
 7. **Wait.** The screen goes black, the MMI restarts several times, and progress bars come and go. This is normal. **Do not touch anything.**
 8. At the end you get a summary. Everything should be marked as successful / **Y**. Leave the menu with BACK.
-9. Remove the SD card. Check the new version (Step 1). It should now show your target version, for example `P5098 / MU1339`.
+9. Remove the SD card. Check the new version (Step 1). It should now show the version you installed, for example `P5098 / MU1339`.
 
 > [!TIP]
 > Error **"FPK:0 error code 142"**? Put the car key close to the steering column (where the emergency key spot is), then try again.
 
+**Next:** TT with Virtual Cockpit lower than 0296 → [Step 3](#step-3-update-the-virtual-cockpit-tt-and-r8-only). **Everyone else → [Step 4](#step-4-install-mib-and-activate-carplay--android-auto).**
+
 ---
 
-## Step 3: Update the Virtual Cockpit (only if below 0296)
+## Step 3: Update the Virtual Cockpit (TT and R8 only)
 
-In the TT, CarPlay and Android Auto are shown on the **Virtual Cockpit**. The Virtual Cockpit needs software version **0296 or higher** to show them. If yours is already 0296+, **skip this step**.
+> [!NOTE]
+> **Skip this step and go to [Step 4](#step-4-install-mib-and-activate-carplay--android-auto) if:**
+> - your car is **not a TT or R8** (A3, Q2, A4, A5, Q5, Q7, A6, A7): CarPlay is shown on the MMI screen, so the cockpit version doesn't matter; **or**
+> - your **TT's Virtual Cockpit is already on 0296 or higher**.
+
+The TT and R8 have **no central screen**: CarPlay and Android Auto are shown in the **Virtual Cockpit** behind the steering wheel. On the **TT**, the Virtual Cockpit needs software version **0296 or higher** to show them.
 
 **Time:** about 15–30 minutes. **SD card:** #1 again (re-formatted).
 
 #### How does this work?
 
-The Virtual Cockpit has no SD slot of its own. **The MMI updates it for you**: you put the Virtual Cockpit update on an SD card, insert it in the MMI (glovebox), and the MMI passes it on to the cockpit. Audi dealers do it exactly the same way: Audi publishes the TT update as an official SD card, part number **`8S0 906 961 AE`**, software version **`0296`**. The only difference is that the dealer starts it from their diagnostic computer, while you start it from the Red Engineering Menu.
+The Virtual Cockpit has no SD slot of its own. **The MMI updates it for you**: you put the Virtual Cockpit update on an SD card, insert it in the MMI, and the MMI passes it on to the cockpit. Audi dealers do it exactly the same way: Audi publishes the TT update as an official SD card, part number **`8S0 906 961 AE`**, software version **`0296`**. The only difference is that the dealer starts it from their diagnostic computer, while you start it from the Red Engineering Menu.
 
 > [!TIP]
-> **Don't want to do this step yourself?** Any Audi dealer can install Virtual Cockpit version 0296 (ask for the instrument cluster software update, SD card `8S0 906 961 AE`). It's an official Audi update, so it doesn't affect anything else in this guide. Dealers usually charge for it.
+> **Don't want to do this step yourself?** Any Audi dealer can install the latest Virtual Cockpit software (for the TT: SD card `8S0 906 961 AE`, version 0296). It's an official Audi update, so it doesn't affect anything else in this guide. Dealers usually charge for it.
 
 #### 3a. Find the right file
+
+**TT:**
 
 1. On [mibvault.com](https://mibvault.com), search for **`AU334`**: [mibvault.com/search?q=AU334](https://mibvault.com/search?q=AU334). `AU334` is the code for the **TT Virtual Cockpit**. The files are in mibvault's **"VC-AID Updates"** folder.
 2. Download this file:
@@ -345,26 +402,34 @@ The Virtual Cockpit has no SD slot of its own. **The MMI updates it for you**: y
    | `AU_C1_AU334_0218_0421_prod_8S0906961E.7z` | 0218 | ❌ older, **never install** |
 
    **How to read the name:** `AU334` = TT Virtual Cockpit, `0296` = the VC version, `8S0906961AE` = Audi's part number for this update.
-3. **Don't** take files with another code (`AU37X` = A3, `AU491` = A4/A5/Q5, `AU57X` = A6/A7, `AU724` = R8, `AU736` = Q7) or a **"GEN2"** file. They are for other cars.
-4. *Optional but recommended:* mibvault shows a **fingerprint icon** next to each file: that's its **SHA-256 checksum**. If you want to be sure the download isn't damaged, compare it: in Windows PowerShell, run `Get-FileHash "C:\path\to\the-file.7z"` and check that the long code matches.
+
+**R8:**
+
+- There is **no confirmed minimum** Virtual Cockpit version for CarPlay on the R8. Only do this if CarPlay/Android Auto doesn't show up after Step 4.
+- The R8 file on mibvault is **`AU_C1_AU724_0253_0400_prod_8S0906961AF_R8.7z`** (Virtual Cockpit version **0253**, search `AU724`). Only install it if your current version is **lower** than 0253.
+
+**Both:**
+
+- **Don't** take files with another code (`AU37X` = A3, `AU491` = A4/A5/Q5, `AU57X` = A6/A7, `AU736` = Q7, or `AU334`/`AU724` for the other car) or a **"GEN2"** file.
+- *Optional but recommended:* compare the **SHA-256 checksum** (fingerprint icon on mibvault) with `Get-FileHash "C:\path\to\the-file.7z"` in PowerShell.
 
 > [!CAUTION]
-> **Never downgrade the Virtual Cockpit.** Only install 0296 if your current version is **lower** than 0296. Installing an older version on the cluster can permanently damage it (people have reported damaged cluster memory after a downgrade). If you already have 0296 or higher: skip this step.
+> **Never downgrade the Virtual Cockpit.** Only install an update if your current version is **lower**. Installing an older version on the cluster can permanently damage it (people have reported damaged cluster memory after a downgrade).
 
 #### 3b. Prepare the SD card
 
-1. **Format** SD card #1 as FAT32 ([3.2](#32-formatting-an-sd-card)). Yes, this erases the MMI firmware from it; you don't need that anymore.
+1. **Format** SD card #1 as FAT32 ([4.2](#42-formatting-an-sd-card)). Yes, this erases the MMI firmware from it; you don't need that anymore.
 2. Unpack the Virtual Cockpit update with **7-Zip** and copy the **contents** to the card. Just like the firmware, **`metainfo2.txt` must be directly on the card**, not inside a folder ([see 2.2](#22-put-the-firmware-on-sd-card-1)).
 
 #### 3c. Install it in the car
 
-1. Battery taken care of ([3.1](#31-keep-the-battery-healthy)). **Keep the key inside the car**, near the steering column: the update won't start without it.
+1. Battery taken care of ([4.1](#41-keep-the-battery-healthy)). **Keep the key inside the car**, near the steering column: the update won't start without it.
 2. Insert the SD card into slot **SD1**.
-3. Open the **Red Engineering Menu** (NAV/MAP up + RADIO down, see [3.4](#34-the-hidden-menus-red-and-green-engineering-menu)).
+3. Open the **Red Engineering Menu** (TT: NAV/MAP up + RADIO down, see [4.4](#44-the-hidden-menus-red-and-green-engineering-menu)).
 4. **Update** → select the **SD card** → the MMI shows the Virtual Cockpit / instrument cluster package → **Start**.
 5. Wait until it's finished. **The Virtual Cockpit will go dark and restart, possibly a few times.** This is normal. Don't switch the car off and don't remove the SD card.
 6. When the summary shows everything as successful, leave the menu with BACK and remove the card.
-7. Open the Red Engineering Menu → **Version information** again and check that the Virtual Cockpit now shows **0296**.
+7. Open the Red Engineering Menu → **Version information** again and check the new Virtual Cockpit version (TT: **0296**).
 
 **The MMI says "no update found" or refuses the package?** Check that `metainfo2.txt` is directly on the card and try another SD card. If it still refuses, do [Step 4](#step-4-install-mib-and-activate-carplay--android-auto) first and then try this step again; some sellers say the update only installs after the M.I.B. patch.
 
@@ -372,15 +437,16 @@ The Virtual Cockpit has no SD slot of its own. **The MMI updates it for you**: y
 
 ## Step 4: Install M.I.B. and activate CarPlay / Android Auto
 
-The firmware update alone **does not** switch on CarPlay/Android Auto. The free **M.I.B.** tool does that. It installs itself, unlocks the Green Engineering Menu, and patches your MMI so CarPlay and Android Auto are enabled.
+The firmware update alone **does not** switch on CarPlay/Android Auto. The free **M.I.B.** tool does that. It installs itself, unlocks the Green Engineering Menu, and patches your MMI so CarPlay and Android Auto are enabled. **This step is the same for every model.**
 
 **Time:** about 20–30 minutes. **SD card:** #2.
 
 ### 4.1 Download M.I.B. and the patch
 
 1. **M.I.B.:** go to **https://github.com/Mr-MIBonk/M.I.B._More-Incredible-Bash/releases** and download the **latest release** ("Source code (zip)" under *Assets*).
-2. **Patch collection:** go to **https://mib.mibsolution.one** (log in with user **`guest`**, password **`guest`**) and download the patch collection. You only need the folder that matches your firmware name exactly, for example:
-   `MHI2_ER_AU43x_P5098_MU1339_PATCH`
+2. **Patch collection:** go to **https://mib.mibsolution.one** (log in with user **`guest`**, password **`guest`**) and download the patch collection. You only need the folder that matches your firmware name **exactly**, for example:
+   - TT, Europe: `MHI2_ER_AU43x_P5098_MU1339_PATCH`
+   - A4/A5/Q5/Q7 "Q" unit, Europe: `MHI2Q_ER_AUG22_P5092_MU1329_PATCH`
 
    *mibsolution can be slow. The M.I.B. wiki links a [faster download mirror](https://mibwiki.one/share/99dda9a7-06e2-4673-a5df-2ea7e0eb18cb).*
 
@@ -388,7 +454,7 @@ The firmware update alone **does not** switch on CarPlay/Android Auto. The free 
 
 ### 4.2 Prepare SD card #2
 
-1. **Format** SD card #2 as FAT32 ([3.2](#32-formatting-an-sd-card)).
+1. **Format** SD card #2 as FAT32 ([4.2](#42-formatting-an-sd-card)).
 2. Unpack the M.I.B. zip. Open the folder inside it and copy **everything** onto the SD card. Again, **`metainfo2.txt` must be directly on the card**.
 3. Copy the patch folder for **your** firmware into the **`patches`** folder on the SD card.
 4. *(Optional, makes installing automatic)* Rename the file **`_Swdlautorun.txt`** to **`Swdlautorun.txt`** (remove the underscore).
@@ -397,7 +463,7 @@ The firmware update alone **does not** switch on CarPlay/Android Auto. The free 
 
 ### 4.3 Install M.I.B. in the car
 
-1. Battery taken care of ([3.1](#31-keep-the-battery-healthy)).
+1. Battery taken care of ([4.1](#41-keep-the-battery-healthy)).
 2. Insert SD card #2 into slot **SD1**. **Leave it in from now on.** M.I.B. only works while its card is in SD1.
 3. Install:
    - **If you renamed `Swdlautorun.txt`:** just wait. Within about a minute the MMI restarts into update mode by itself.
@@ -411,7 +477,7 @@ The firmware update alone **does not** switch on CarPlay/Android Auto. The free 
 ### 4.4 Run M.I.B. from the Green Engineering Menu
 
 1. Wait until the MMI has fully started. **The Green Menu can take up to 5 minutes** to become available after a restart.
-2. Open the **Green Engineering Menu** with the GEM key combination ([3.4](#34-the-hidden-menus-red-and-green-engineering-menu)).
+2. Open the **Green Engineering Menu** with the GEM key combination for your model ([4.4](#44-the-hidden-menus-red-and-green-engineering-menu)).
 3. Use the **rotary knob** to scroll and **press** it to select. Choose **`==>>m.i.b<<==`**.
 
    ![Select m.i.b in GEM](https://user-images.githubusercontent.com/98130152/173447457-c4174b4a-2fd8-4127-ba17-996f3a3155d6.png)
@@ -440,7 +506,7 @@ The firmware update alone **does not** switch on CarPlay/Android Auto. The free 
 2. Connect your phone with a **data USB cable** to the car's USB / AMI port.
 3. **iPhone:** unlock the phone and allow CarPlay when asked (Settings → General → CarPlay).
    **Android:** make sure the **Android Auto** app is installed and updated, unlock the phone and follow the prompts.
-4. In the MMI menu you'll now find **"Audi smartphone interface"**, and CarPlay / Android Auto appears on the Virtual Cockpit. 🎉
+4. In the MMI menu you'll now find **"Audi smartphone interface"**. CarPlay / Android Auto appears on the **MMI screen** (TT and R8: in the **Virtual Cockpit**). 🎉
 
 ---
 
@@ -449,17 +515,18 @@ The firmware update alone **does not** switch on CarPlay/Android Auto. The free 
 | Problem | Solution |
 |---|---|
 | **"No update found" / SD card not recognised** | `metainfo2.txt` is not directly on the card, or the card is not FAT32. Re-format and copy again. Try **another SD card**. Bad cards are the #1 issue. Use slot **SD1**. |
+| **Update refused / "not compatible"** | The file doesn't match your car. Check `MHI2`/`MHI2Q`, region and family again ([section 2](#2-which-firmware-file-do-i-need)). |
 | **Error FPK:0 / error code 142** | Put the key near the steering column and retry. |
 | **Update seems stuck / black screen** | Be patient: some stages take 20+ minutes without visible progress. If nothing happens for over an hour, reboot the MMI (hold the reboot combination ~10 s). As a last resort, pull the MMI fuse or disconnect the battery briefly. |
 | **Power was lost during an update** | Don't panic: this can usually be recovered. Re-insert the SD card and start the update again. Ask for help (see below) with your M.I.B. `backup` folder. |
-| **Green Engineering Menu doesn't open** | It only exists **after** M.I.B. is installed, and needs up to 5 minutes after the MMI starts. Check you're on the home screen. |
+| **Green Engineering Menu doesn't open** | It only exists **after** M.I.B. is installed, and needs up to 5 minutes after the MMI starts. Check you're on the home screen and using the combination for your model. |
 | **"m.i.b" not visible in the Green Menu** | M.I.B.'s SD card must be in **SD1**. |
 | **No patch found for my firmware** | Check that the patch folder name matches your firmware name exactly and is inside `patches`. If none exists for your version, update to a version that has one (Step 2). |
-| **"Audi smartphone interface" not visible** | Re-check the Virtual Cockpit version (0296+), reboot the MMI, and re-run the M.I.B. patch. Some forum guides mention extra 5F coding with OBDeleven/VCDS as a last resort, but it's normally not needed. |
+| **"Audi smartphone interface" not visible** | Reboot the MMI and re-run the M.I.B. patch. **TT:** check the Virtual Cockpit is on 0296+. **R8:** try the Virtual Cockpit update in Step 3. Some forum guides mention extra 5F coding with OBDeleven/VCDS as a last resort, but it's normally not needed. |
 | **Phone connects for charging only** | Use a different cable (data capable), or the other USB port. Check you're using a port that is connected to the MMI (it should also play music over USB). |
 | **SVM error in the 5F module (seen with a diagnostic tool)** | Run **"SVM fix"** in M.I.B. |
 
-**Need help?** The M.I.B. community: [M.I.B. wiki](https://github.com/Mr-MIBonk/M.I.B._More-Incredible-Bash/wiki), [Get help page](https://github.com/Mr-MIBonk/M.I.B._More-Incredible-Bash/wiki/Get-help), [mibwiki.one](https://mibwiki.one), and the [TT Forum firmware FAQ](https://www.ttforum.co.uk/threads/faq-audi-tt-mk3-8s-firmware-updates.1970533/). Always include your firmware name and the M.I.B. log (`backup/logs` on the SD card).
+**Need help?** The M.I.B. community: [M.I.B. wiki](https://github.com/Mr-MIBonk/M.I.B._More-Incredible-Bash/wiki), [Get help page](https://github.com/Mr-MIBonk/M.I.B._More-Incredible-Bash/wiki/Get-help) and [mibwiki.one](https://mibwiki.one). Model forums: [TT Forum firmware FAQ](https://www.ttforum.co.uk/threads/faq-audi-tt-mk3-8s-firmware-updates.1970533/), [Audizine](https://www.audizine.com/forum/), [AudiWorld](https://www.audiworld.com/forums/). Always include your firmware name and the M.I.B. log (`backup/logs` on the SD card).
 
 ---
 
@@ -470,6 +537,7 @@ The firmware update alone **does not** switch on CarPlay/Android Auto. The free 
 | **M.I.B. – More Incredible Bash** (the tool) | https://github.com/Mr-MIBonk/M.I.B._More-Incredible-Bash |
 | M.I.B. releases (download) | https://github.com/Mr-MIBonk/M.I.B._More-Incredible-Bash/releases |
 | M.I.B. wiki | https://github.com/Mr-MIBonk/M.I.B._More-Incredible-Bash/wiki |
+| M.I.B. firmware compatibility table | https://github.com/Mr-MIBonk/M.I.B._More-Incredible-Bash/wiki/MHI2-M.I.B.-patch-FW-compatibility-table |
 | M.I.B. patches (`guest`/`guest`) | https://mib.mibsolution.one |
 | Firmware & Virtual Cockpit downloads | https://mibvault.com |
 | 7-Zip | https://www.7-zip.org |
@@ -478,4 +546,4 @@ The firmware update alone **does not** switch on CarPlay/Android Auto. The free 
 
 All credit for the M.I.B. tool goes to **Mr-MIBonk and the M.I.B. team**. Screenshots of M.I.B. menus are from the M.I.B. wiki. This repository does not host any firmware or software; it only explains how to use freely available tools.
 
-*Found a mistake or got it working on a different model/region? Open an issue or pull request so this guide stays useful for everyone.*
+*Found a mistake or got it working on a model/region that isn't listed? Open an issue or pull request so this guide stays useful for everyone.*
