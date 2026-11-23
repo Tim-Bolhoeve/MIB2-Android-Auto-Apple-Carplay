@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="380" viewBox="0 0 760 380" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect width="760" height="380" fill="#ffffff"/>
+  <text x="380" y="30" text-anchor="middle" font-size="19" font-weight="700" fill="#1f2328">SD card 2: M.I.B. tool + patch (what it should look like)</text>
+  <rect x="30" y="50" width="450" height="310" rx="10" fill="#f6f8fa" stroke="#d0d7de"/>
+  <g font-family="Consolas, Menlo, monospace" font-size="15" fill="#1f2328">
+    <text x="50" y="80" font-weight="700">SD card (E:)  [FAT32]</text>
+    <text x="70" y="108">📁 apps</text>
+    <text x="70" y="132">📁 backup</text>
+    <text x="70" y="156">📁 config</text>
+    <text x="70" y="180">📁 esd   📁 Launcher   📁 mod</text>
+    <rect x="62" y="190" width="400" height="56" rx="5" fill="#fbefff" stroke="#8250df"/>
+    <text x="70" y="210" font-weight="700">📁 patches</text>
+    <text x="95" y="234">📁 MHI2_ER_AU43x_P5098_MU1339_PATCH</text>
+    <text x="70" y="270">📄 start   📄 VERSION  ...</text>
+    <rect x="62" y="282" width="190" height="26" rx="5" fill="#dafbe1" stroke="#1a7f37"/>
+    <text x="70" y="301" font-weight="700">📄 metainfo2.txt</text>
+    <text x="70" y="335">📄 Swdlautorun.txt (optional)</text>
+  </g>
+  <g font-size="14" fill="#1f2328">
+    <text x="500" y="100" font-weight="700" fill="#1a7f37">From the M.I.B. download</text>
+    <text x="500" y="122">Everything except "patches".</text>
+    <text x="500" y="144">metainfo2.txt on the card itself.</text>
+    <text x="500" y="200" font-weight="700" fill="#8250df">From the patch collection</text>
+    <text x="500" y="222">Only the folder whose name</text>
+    <text x="500" y="244">matches YOUR car's firmware.</text>
+    <text x="500" y="266">(Copying all of them also works:</text>
+    <text x="500" y="288">M.I.B. picks the right one.)</text>
+  </g>
+</svg>

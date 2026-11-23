@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="420" viewBox="0 0 760 420" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect width="760" height="420" fill="#ffffff"/>
+  <text x="380" y="30" text-anchor="middle" font-size="19" font-weight="700" fill="#1f2328">Formatting the SD card in Windows (illustration)</text>
+  <rect x="40" y="50" width="330" height="350" rx="6" fill="#f3f3f3" stroke="#adadad"/>
+  <rect x="40" y="50" width="330" height="30" rx="6" fill="#e5e5e5"/>
+  <text x="54" y="70" font-size="13" fill="#1f2328">Format SD CARD (E:)</text>
+  <g font-size="13" fill="#1f2328">
+    <text x="58" y="105">Capacity:</text>
+    <rect x="58" y="112" width="294" height="24" fill="#fff" stroke="#adadad"/><text x="66" y="129">29.7 GB</text>
+    <text x="58" y="160">File system:</text>
+    <rect x="58" y="167" width="294" height="24" fill="#fff" stroke="#cf222e" stroke-width="3"/><text x="66" y="184" font-weight="700">FAT32 (Default)</text>
+    <text x="58" y="215">Allocation unit size:</text>
+    <rect x="58" y="222" width="294" height="24" fill="#fff" stroke="#adadad"/><text x="66" y="239">Default allocation size</text>
+    <text x="58" y="270">Volume label:</text>
+    <rect x="58" y="277" width="294" height="24" fill="#fff" stroke="#adadad"/><text x="66" y="294">MMI</text>
+    <rect x="58" y="315" width="14" height="14" fill="#0067c0"/><text x="80" y="327">Quick Format</text>
+    <rect x="180" y="360" width="80" height="26" rx="4" fill="#0067c0"/><text x="220" y="378" text-anchor="middle" fill="#fff">Start</text>
+    <rect x="270" y="360" width="80" height="26" rx="4" fill="#fff" stroke="#adadad"/><text x="310" y="378" text-anchor="middle">Close</text>
+  </g>
+  <g font-size="14" fill="#1f2328">
+    <text x="395" y="90" font-weight="700">1. Put the SD card in your PC.</text>
+    <text x="395" y="120" font-weight="700">2. Open File Explorer → This PC.</text>
+    <text x="395" y="150" font-weight="700">3. Right-click the SD card → Format...</text>
+    <text x="395" y="180" font-weight="700" fill="#cf222e">4. File system: FAT32</text>
+    <text x="395" y="210" font-weight="700">5. Click Start → OK.</text>
+    <text x="395" y="255" fill="#57606a">Is FAT32 not in the list?</text>
+    <text x="395" y="277" fill="#57606a">Your card is larger than 32 GB. Use the free</text>
+    <text x="395" y="299" fill="#57606a">tool "Rufus" or "FAT32 Format" (guiformat),</text>
+    <text x="395" y="321" fill="#57606a">or just use a 16 GB / 32 GB card.</text>
+    <text x="395" y="366" fill="#cf222e">Formatting erases everything on the card.</text>
+  </g>
+</svg>

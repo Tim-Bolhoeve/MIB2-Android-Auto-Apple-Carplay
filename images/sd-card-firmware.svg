@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="330" viewBox="0 0 760 330" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect width="760" height="330" fill="#ffffff"/>
+  <text x="380" y="30" text-anchor="middle" font-size="19" font-weight="700" fill="#1f2328">SD card 1: firmware update (what it should look like)</text>
+  <rect x="30" y="50" width="420" height="260" rx="10" fill="#f6f8fa" stroke="#d0d7de"/>
+  <g font-family="Consolas, Menlo, monospace" font-size="16" fill="#1f2328">
+    <text x="50" y="82" font-weight="700">SD card (E:)  [FAT32]</text>
+    <text x="70" y="115">📁 Cleanup</text>
+    <text x="70" y="143">📁 MU1339 ...</text>
+    <text x="70" y="171">📁 ... (more folders)</text>
+    <text x="70" y="199">📄 ...</text>
+    <rect x="62" y="211" width="210" height="28" rx="5" fill="#dafbe1" stroke="#1a7f37"/>
+    <text x="70" y="231" font-weight="700">📄 metainfo2.txt</text>
+  </g>
+  <text x="50" y="285" font-size="13" fill="#57606a">Folder names differ per firmware: that is fine.</text>
+  <g font-size="14" fill="#1f2328">
+    <text x="475" y="95" font-weight="700" fill="#1a7f37">✔ Correct</text>
+    <text x="475" y="117">metainfo2.txt sits directly on</text>
+    <text x="475" y="137">the card, not inside a folder.</text>
+    <text x="475" y="185" font-weight="700" fill="#cf222e">✘ Wrong</text>
+    <text x="475" y="207" font-family="Consolas, Menlo, monospace" font-size="13">E:\MHI2_ER_AU43x_P5098\metainfo2.txt</text>
+    <text x="475" y="229">The car will say "no update found".</text>
+    <text x="475" y="251">Fix: move the folder's contents</text>
+    <text x="475" y="271">one level up, onto the card itself.</text>
+  </g>
+</svg>

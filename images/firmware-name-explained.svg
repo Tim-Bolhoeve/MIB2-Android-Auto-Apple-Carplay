@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="300" viewBox="0 0 1000 300" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect width="1000" height="300" fill="#ffffff"/>
+  <text x="500" y="32" text-anchor="middle" font-size="20" font-weight="700" fill="#1f2328">How to read a firmware name</text>
+  <g font-family="Consolas, Menlo, monospace" font-size="34" font-weight="700" text-anchor="middle">
+    <rect x="40"  y="60" width="140" height="60" rx="8" fill="#ddf4ff" stroke="#0969da"/>
+    <text x="110" y="102" fill="#0969da">MHI2</text>
+    <text x="196" y="102" fill="#8c959f">_</text>
+    <rect x="212" y="60" width="90" height="60" rx="8" fill="#fff8c5" stroke="#9a6700"/>
+    <text x="257" y="102" fill="#9a6700">ER</text>
+    <text x="318" y="102" fill="#8c959f">_</text>
+    <rect x="334" y="60" width="150" height="60" rx="8" fill="#ffebe9" stroke="#cf222e"/>
+    <text x="409" y="102" fill="#cf222e">AU43x</text>
+    <text x="500" y="102" fill="#8c959f">_</text>
+    <rect x="516" y="60" width="150" height="60" rx="8" fill="#fbefff" stroke="#8250df"/>
+    <text x="591" y="102" fill="#8250df">P5098</text>
+    <text x="682" y="102" fill="#8c959f">_</text>
+    <rect x="698" y="60" width="180" height="60" rx="8" fill="#dafbe1" stroke="#1a7f37"/>
+    <text x="788" y="102" fill="#1a7f37">MU1339</text>
+  </g>
+  <g font-size="14" fill="#1f2328" text-anchor="middle">
+    <text x="110" y="150" font-weight="700" fill="#0969da">Hardware</text>
+    <text x="110" y="170">MHI2 = MIB2 High</text>
+    <text x="110" y="190">(MHI2Q is different!)</text>
+
+    <text x="257" y="150" font-weight="700" fill="#9a6700">Region</text>
+    <text x="257" y="170">ER = Europe / RoW</text>
+    <text x="257" y="190">US = North America</text>
+    <text x="257" y="210">JP = Japan, CN = China</text>
+
+    <text x="409" y="150" font-weight="700" fill="#cf222e">Car family</text>
+    <text x="409" y="170">AU43x = Audi TT</text>
+    <text x="409" y="190">(AUG22, AU57x ... are</text>
+    <text x="409" y="210">other Audi models)</text>
+
+    <text x="591" y="150" font-weight="700" fill="#8250df">Release</text>
+    <text x="591" y="170">P = production release</text>
+    <text x="591" y="190">higher number = newer</text>
+
+    <text x="788" y="150" font-weight="700" fill="#1a7f37">MU version</text>
+    <text x="788" y="170">the "version number"</text>
+    <text x="788" y="190">people talk about</text>
+    <text x="788" y="210">(e.g. "1339")</text>
+  </g>
+  <rect x="40" y="240" width="920" height="44" rx="8" fill="#fff8c5" stroke="#d4a72c"/>
+  <text x="500" y="268" text-anchor="middle" font-size="15" fill="#1f2328"><tspan font-weight="700">Golden rule:</tspan> the first three parts (hardware_region_car) of the new firmware must be EXACTLY the same as in your car.</text>
+</svg>
